@@ -14,7 +14,7 @@ interface FormInterface
 
     public function radioInput(array $config, string $value);
 
-    public function checkboxInput();
+    public function checkboxInput(array $config);
 
     public function submitInput();
 

@@ -21,6 +21,8 @@ class Form implements FormInterface
             echo "<input class={$config['class']} type='text' name={$config['name']} required>";
         } else if ($config['id'] && $config['name']) {
             echo "<input class={$config['id']} type='text' name={$config['name']} required>";
+        } else if ($config['name']) {
+            echo "<input type='text' name={$config['name']} required>";
         }
 
         echo "</label>";
@@ -28,8 +30,6 @@ class Form implements FormInterface
 
     public function selectInput(array $config, array $value)
     {
-        echo "<label for={$config['label']}>{$config['label']}";
-
         if ($config['class'] && $config['id'] && $config['name']) {
             echo "<select class={$config['class']} id={$config['id']} type='text' name={$config['name']} required>
                   <option value=''>Please choose an option</option>";
@@ -53,9 +53,14 @@ class Form implements FormInterface
             foreach ($value as $item) {
                 echo "<option value={$item}>{$item}</option>";
             }
-        }
+        } else if ($config['name']) {
+            echo "<select type='text' name={$config['name']} required>
+                  <option value=''>Please choose an option</option>";
 
-        echo "</label>";
+            foreach ($value as $item) {
+                echo "<option value={$item}>{$item}</option>";
+            }
+        }
     }
 
     public function textAreaInput(array $config, string $text)
@@ -66,6 +71,8 @@ class Form implements FormInterface
             echo "<textarea class={$config['class']} name={$config['name']} placeholder={$text} required></textarea>";
         } else if ($config['id'] && $config['name']) {
             echo "<textarea class={$config['class']} id={$config['id']} name={$config['name']} placeholder={$text} required></textarea>";
+        } else if ($config['name']) {
+            echo "<textarea name={$config['name']} placeholder={$text} required></textarea>";
         }
     }
 
@@ -73,19 +80,34 @@ class Form implements FormInterface
     {
         if ($config['class'] && $config['id'] && $config['name']) {
             echo "<input class={$config['class']} id={$config['id']} type='radio' name={$config['name']} value={$value}>
-                  <label for={$config['label']}>{$config['label']}";
+                  <label for={$config['label']}>{$config['label']}</label>";
         } else if ($config['class'] && $config['name']) {
             echo "<input class={$config['class']} type='radio' name={$config['name']} value={$value}>
-                  <label for={$config['label']}>{$config['label']}";
+                  <label for={$config['label']}>{$config['label']}</label>";
         } else if ($config['id'] && $config['name']) {
             echo "<input class={$config['id']} type='radio' name={$config['name']} value={$value}>
-                  <label for={$config['label']}>{$config['label']}";
+                  <label for={$config['label']}>{$config['label']}</label>";
+        } else if ($config['name']) {
+            echo "<input type='radio' name={$config['name']} value={$value}>
+                  <label for={$config['label']}>{$config['label']}</label>";
         }
     }
 
-    public function checkboxInput()
+    public function checkboxInput(array $config)
     {
-        // TODO: Implement checkboxInput() method.
+        if ($config['class'] && $config['id'] && $config['name']) {
+            echo "<input class={$config['class']} id={$config['id']} type='checkbox' name={$config['name']}>
+                  <label for={$config['label']}>{$config['label']}</label>";
+        } else if ($config['class'] && $config['name']) {
+            echo "<input class={$config['class']} type='checkbox' name={$config['name']}>
+                  <label for={$config['label']}>{$config['label']}</label>";
+        } else if ($config['id'] && $config['name']) {
+            echo "<input class={$config['id']} type='checkbox' name={$config['name']}>
+                  <label for={$config['label']}>{$config['label']}</label>";
+        } else if ($config['name']) {
+            echo "<input type='checkbox' name={$config['name']}>
+                  <label for={$config['label']}>{$config['label']}</label>";
+        }
     }
 
     public function submitInput()
