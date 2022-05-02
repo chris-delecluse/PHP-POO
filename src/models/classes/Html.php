@@ -12,9 +12,9 @@ class Html implements HtmlInterface
         echo "<link rel='stylesheet' href={$path}>";
     }
 
-    public function linkMetaData(string $text)
+    public function linkMetaData(string $attribute, string $value)
     {
-        echo "<meta $text>";
+        echo "<meta {$attribute}={$value}>";
     }
 
     public function linkImages(string $path, string $alt, ...$data)

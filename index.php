@@ -102,4 +102,6 @@ $popo = ["ceciEstUnID", "ceciEstUneClass"];
 $tessssst->linkAnchors("https://www.youtube.com/", "prou", "hello");
 
 $tessssst->linkImages("https://media4.giphy.com/media/COYGe9rZvfiaQ/giphy.gif", "photo");
+
+$tessssst->linkMetaData(["prout", "cahuette"], ["hello", "cahuette", "prout", "world"]);
 require "src/views/templates/footer.php";
