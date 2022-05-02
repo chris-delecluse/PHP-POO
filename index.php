@@ -70,7 +70,7 @@ $form->textInput($arr1);
 // ----------------------
 $form->selectInput($arr2, $selectArr);
 // -----------------------
-$form->textAreaInput($arr3, "Hello");
+$form->textAreaInput($arr3, "Hello, can you please put a message here.");
 // ------------------------
 $form->radioInput($arr4, "choose-1");
 
@@ -96,5 +96,8 @@ $html->linkAnchors("https://www.youtube.com/", "redirect on Youtube", "link");
 $html->linkImages("https://media4.giphy.com/media/COYGe9rZvfiaQ/giphy.gif", "photo");
 
 $html->linkMetaData("test", "ok");
+
+$html->linkAnchors("src/views/formView.php", "click here to go form");
+
 
 require "src/views/templates/footer.php";

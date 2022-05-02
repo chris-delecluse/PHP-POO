@@ -16,7 +16,7 @@ interface FormInterface
 
     public function checkboxInput(array $config);
 
-    public function submitInput(array $config, string $value);
+    public function submitInput(array|string $config, string $value);
 
     public function endingForm();
 }
