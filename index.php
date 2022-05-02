@@ -12,96 +12,89 @@ require "src/views/templates/head.php";
 
 $form = new Form();
 
-$arrayOfData = array(
-    'label' => 'label1',
-    'name' => 'test1',
+$arr1 = array(
+    'label' => 'Username',
+    'name' => 'username',
     'id' => null,
-    'class' => 'test1'
+    'class' => 'userInput'
 );
 
-$arr = ['po', 'kds', 'ptdr'];
+$arr2 = array(
+    'label' => 'Choose',
+    'name' => 'selectInput',
+    'id' => "selectInput",
+    'class' => null
+);
 
-// ---------------------
-
-$form->startingForm("prout.php", "POST");
-$form->textInput($arrayOfData);
-
-// ----------------------
-
-$form->selectInput(array(
-    'label' => 'label2',
-    'name' => 'test2',
+$arr3 = array(
+    'label' => 'Message',
+    'name' => 'message',
     'id' => null,
-    'class' => 'test2'
-), $arr);
+    'class' => 'message'
+);
 
-// -----------------------
-
-$form->textAreaInput(array(
-    'label' => 'label3',
-    'name' => 'test3',
+$arr4 = array(
+    'label' => 'choose 1',
+    'name' => 'test',
     'id' => null,
-    'class' => 'test3'
-), "Hello");
+    'class' => 'test'
+);
 
-// ------------------------
-
-$form->radioInput(array(
-    'label' => 'label4',
-    'name' => 'test4',
-    'id' => null,
-    'class' => 'test4'
-), "hello");
-
-$form->radioInput(array(
-    'label' => 'label5',
-    'name' => 'test4',
-    'id' => null,
-    'class' => 'test5 sqdssfsd'
-), "helllllllo");
-
-$form->radioInput(array(
-    'label' => 'label6',
-    'name' => 'test4',
-    'id' => null,
-    'class' => 'test6'
-), "test6");
-
-// -------------------------
-
-$form->checkboxInput(array(
+$arr5 = array(
     'label' => 'man',
     'name' => 'man',
     'class' => null,
     'id' => 'man'
-));
+);
 
-$form->checkboxInput(array(
+$arr6 = array(
     'label' => 'woman',
     'name' => 'woman',
     'class' => null,
     'id' => 'woman'
-));
+);
 
-// ---------------------
-
-$form->submitInput(array(
+$arr7 = array(
     'name' => 'submit',
     'class' => null,
     'id' => null
-    ), "Envoyer");
+);
 
+$selectArr = ['first', 'second', 'third'];
 
+// ---------------------
+
+$form->startingForm("prout.php", "POST");
+
+$form->textInput($arr1);
+// ----------------------
+$form->selectInput($arr2, $selectArr);
+// -----------------------
+$form->textAreaInput($arr3, "Hello");
+// ------------------------
+$form->radioInput($arr4, "choose-1");
+
+$arr4['label'] = "choose 2";
+$form->radioInput($arr4, "choose-2");
+
+$arr4['label'] = "choose 3";
+$form->radioInput($arr4, "choose-3");
+// -------------------------
+$form->checkboxInput($arr5);
+$form->checkboxInput($arr6);
+// ---------------------
+$form->submitInput($arr7, "Envoyer");
+// ---------------------
 $form->endingForm();
 
 
-$tessssst = new Html();
 
-$popo = ["ceciEstUnID", "ceciEstUneClass"];
+$html = new Html();
 
-$tessssst->linkAnchors("https://www.youtube.com/", "prou", "hello");
+$html->linkAnchors("https://www.youtube.com/", "redirect on Youtube", "link");
 
-$tessssst->linkImages("https://media4.giphy.com/media/COYGe9rZvfiaQ/giphy.gif", "photo");
+$html->linkImages("https://media4.giphy.com/media/COYGe9rZvfiaQ/giphy.gif", "photo");
 
-$tessssst->linkMetaData(["prout", "cahuette"], ["hello", "cahuette", "prout", "world"]);
+$html->linkMetaData("test", "ok");
+
 require "src/views/templates/footer.php";
