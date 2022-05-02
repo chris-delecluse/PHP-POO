@@ -110,9 +110,17 @@ class Form implements FormInterface
         }
     }
 
-    public function submitInput()
+    public function submitInput(array $config, string $value)
     {
-        // TODO: Implement submitInput() method.
+        if ($config['class'] && $config['id'] && $config['name']) {
+            echo "<input type='submit' name={$config['name']} class={$config['class']} id={$config['id']} value={$value}>";
+        } else if ($config['class'] && $config['name']) {
+            echo "<input type='submit' name={$config['name']} class={$config['class']} value={$value}>";
+        } else if ($config['id'] && $config['name']) {
+            echo "<input type='submit' name={$config['name']} id={$config['id']} value={$value}>";
+        } else if ($config['name']) {
+            echo "<input type='submit' name={$config['name']} value={$value}>";
+        }
     }
 
     public function endingForm()

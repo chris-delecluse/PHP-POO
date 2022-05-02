@@ -80,6 +80,15 @@ $form->checkboxInput(array(
     'id' => 'woman'
 ));
 
+// ---------------------
+
+$form->submitInput(array(
+    'name' => 'submit',
+    'class' => null,
+    'id' => null
+    ), "Envoyer");
+
+
 $form->endingForm();
 
 require "src/views/templates/footer.php";
