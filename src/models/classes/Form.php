@@ -2,7 +2,7 @@
 
 namespace models\classes;
 
-use models\templates\FormInterface;
+use models\interfaces\FormInterface;
 
 class Form implements FormInterface
 {

@@ -1,9 +1,12 @@
 <?php
 
 use models\classes\Form;
+use models\classes\Html;
 
 require "src/models/interfaces/FormInterface.php";
 require "src/models/classes/Form.php";
+require "src/models/interfaces/HtmlInterface.php";
+require "src/models/classes/Html.php";
 
 require "src/views/templates/head.php";
 
@@ -91,4 +94,12 @@ $form->submitInput(array(
 
 $form->endingForm();
 
+
+$tessssst = new Html();
+
+$popo = ["ceciEstUnID", "ceciEstUneClass"];
+
+$tessssst->linkAnchors("https://www.youtube.com/", "prou", "hello");
+
+$tessssst->linkImages("https://media4.giphy.com/media/COYGe9rZvfiaQ/giphy.gif", "photo");
 require "src/views/templates/footer.php";
