@@ -1,0 +1,17 @@
+{
+    "name": "diwaa/php-poo",
+    "autoload": {
+        "psr-4": {
+            "Diwaa\\PhpPoo\\": "/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Christopher Delecluse",
+            "email": "christopherdeleclusepro@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-pdo": "*"
+    }
+}
