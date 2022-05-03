@@ -15,7 +15,7 @@ $textInputConfig = array(
 
 $form = new Form();
 
-$form->startingForm("src/controllers/formController.php", "POST");
+$form->startingForm("../controllers/formController.php", "POST");
 $form->textInput($textInputConfig);
 
 $textInputConfig['label'] = 'test integer';

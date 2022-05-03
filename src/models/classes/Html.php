@@ -6,7 +6,6 @@ use models\interfaces\HtmlInterface;
 
 class Html implements HtmlInterface
 {
-
     public function linkStylesheets(string $path)
     {
         echo "<link rel='stylesheet' href='$path'>";

@@ -2,6 +2,8 @@
 
 namespace models\interfaces;
 
+use models\classes\Form;
+
 interface HtmlInterface
 {
     public function linkStylesheets(string $path);

@@ -31,12 +31,14 @@ class Form implements FormInterface
     public function selectInput(array $config, array $value)
     {
         if ($config['class'] && $config['id'] && $config['name']) {
-            echo "<select class='$config[class]' id='$config[id]' type='text' name='$config[name]' required>
+            echo "<select class='$config[class]' id='$config[id]' name='$config[name]' required>
                   <option value=''>Please choose an option</option>";
 
             foreach ($value as $item) {
                 echo "<option value='$item'>$item</option>";
             }
+
+            echo "</select>";
 
         } else if ($config['class'] && $config['name']) {
             echo "<select class='$config[class]' name='$config[name]' required>
@@ -46,6 +48,8 @@ class Form implements FormInterface
                 echo "<option value='$item'>$item</option>";
             }
 
+            echo "</select>";
+
         } else if ($config['id'] && $config['name']) {
             echo "<select class='$config[id]' name='$config[name]' required>
                   <option value=''>Please choose an option</option>";
@@ -53,6 +57,9 @@ class Form implements FormInterface
             foreach ($value as $item) {
                 echo "<option value='$item'>$item</option>";
             }
+
+            echo "</select>";
+
         } else if ($config['name']) {
             echo "<select name='$config[name]' required>
                   <option value=''>Please choose an option</option>";
@@ -60,6 +67,8 @@ class Form implements FormInterface
             foreach ($value as $item) {
                 echo "<option value='$item'>$item</option>";
             }
+
+            echo "</select>";
         }
     }
 
