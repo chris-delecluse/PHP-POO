@@ -11,16 +11,18 @@ class Form implements FormInterface
         echo "<form action='$action' method='$method'>";
     }
 
-    public function textInput(array $config)
+    public function textInput(array $config, $steps)
     {
         echo "<label for='$config[label]'>$config[label]";
 
-        if ($config['class'] && $config['id'] && $config['name']) {
-            echo "<input class='$config[class]' id='$config[id]' type='text' name='$config[name]' required>";
+        if ($config['class'] && $config['id'] && $config['name'] && $steps) {
+            echo "<input class='$config[class]' id='$config[id]' type='$config[type]' step='$steps' name='$config[name]' required>";
+        } else if ($config['class'] && $config['id'] && $config['name']) {
+            echo "<input class='$config[class]' id='$config[id]' type='$config[type]' name='$config[name]' required>";
         } else if ($config['class'] && $config['name']) {
-            echo "<input class='$config[class]' type='text' name='$config[name]' required>";
+            echo "<input class='$config[class]' type='$config[type]' name='$config[name]' required>";
         } else if ($config['id'] && $config['name']) {
-            echo "<input class='$config[id]' type='text' name='$config[name]' required>";
+            echo "<input class='$config[id]' type='$config[type]' name='$config[name]' required>";
         } else if ($config['name']) {
             echo "<input type='text' name='$config[name]' required>";
         }

@@ -8,23 +8,26 @@ require "../models/classes/Form.php";
 
 $textInputConfig = array(
     'label' => 'test string',
+    'type' => 'text',
     'name' => 'testString',
-    'id' => null,
+    'id' => 'textId',
     'class' => 'textInput',
 );
 
 $form = new Form();
 
 $form->startingForm("../controllers/formController.php", "POST");
-$form->textInput($textInputConfig);
+$form->textInput($textInputConfig, null);
 
 $textInputConfig['label'] = 'test integer';
 $textInputConfig['name'] = 'testInteger';
-$form->textInput($textInputConfig);
+$textInputConfig['type'] = 'number';
+$form->textInput($textInputConfig, null);
 
 $textInputConfig['label'] = 'test float';
 $textInputConfig['name'] = 'testFloat';
-$form->textInput($textInputConfig);
+$textInputConfig['type'] = 'number';
+$form->textInput($textInputConfig,0.01);
 
 $form->submitInput(array(
     'name' => 'submit',

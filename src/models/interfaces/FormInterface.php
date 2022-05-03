@@ -6,7 +6,7 @@ interface FormInterface
 {
     public function startingForm(string $action, string $method);
 
-    public function textInput(array $config);
+    public function textInput(array $config, $steps);
 
     public function selectInput(array $config, array $value);
 

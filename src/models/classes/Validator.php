@@ -17,13 +17,21 @@ class Validator
         }
     }
 
-    public function validateInteger()
+    public function validateInteger($int) : int
     {
-
+        if (!empty($int)) {
+            return $int;
+        } else {
+            return 0;
+        }
     }
 
-    public function validateFloat()
+    public function validateFloat($float) : float
     {
-
+        if (!empty($float)) {
+            return $float;
+        } else {
+            return 0.0;
+        }
     }
 }

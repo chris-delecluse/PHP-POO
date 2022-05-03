@@ -9,8 +9,16 @@ if (isset($_POST['submit'])) {
 
     $control = new Validator();
 
-    if ($control->validateString($_POST['testString']) !== "error") {
-        $validateDataArr[] = $control->validateString($_POST['testString']);
+    if ($control->validateString($_POST['testString']) != "error") {
+        $validateDataArr[0] = $control->validateString($_POST['testString']);
+    }
+
+    if ($control->validateInteger($_POST['testInteger']) != 0) {
+        $validateDataArr[1] = $control->validateInteger($_POST['testInteger']);
+    }
+
+    if ($control->validateFloat($_POST['testFloat']) != 0.0) {
+        $validateDataArr[2] = $control->validateFloat($_POST['testFloat']);
     }
 
     if (count($validateDataArr) == 3) {
